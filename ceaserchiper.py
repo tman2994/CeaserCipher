@@ -20,24 +20,24 @@ def ceaserchiper( encode_or_decode, plain_text, Shift_amount):
         cipher_text = ''
         print(cipher_text)
         if encode_or_decode == 'encode':
-            for letter in plain_text:
-                if letter in alphabet:
-                    position = alphabet.index(letter)
+            for char in plain_text:
+                if char in alphabet:
+                    position = alphabet.index(char)
                     new_position = position + Shift_amount
                     new_letter = alphabet[new_position]
                     cipher_text += new_letter
                 else:
-                    cipher_text += letter
+                    cipher_text += char
             print(f'this is the cihper: {cipher_text}')
         elif encode_or_decode== 'decode':
             cipher_text = ''
-            for letter in plain_text:
-                if letter in alphabet: 
-                    position = alphabet.index(letter)
+            for char in plain_text:
+                if char in alphabet: 
+                    position = alphabet.index(char)
                     new_position = position - Shift_amount
                     cipher_text += alphabet[new_position]
                 else:
-                    cipher_text += letter
+                    cipher_text += char
             print(f'this is the cihper: {cipher_text}')
        
 
@@ -53,6 +53,7 @@ def restart():
         shift = int(input("Type the shift number:\n"))
         ceaserchiper(encode_or_decode= direction, plain_text=text, Shift_amount= shift)
     else: 
+        print('program will now end good bye')
         exit
 
 restart()
